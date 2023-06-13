@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paradise landing page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section>
+    <div class="circle"></div>
+    <header>
+      <a href="#"><img src="logo.png" class="logo"></a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </header>
+    <div class="content">
+      <div class="textBox">
+        <h2>Yummy!!!<br>It's <span>Paradise</span></h2>
+        <p>Paradise Restaurant might specialize in a particular type of cuisine or offer a diverse menu featuring various culinary styles. It could serve anything from traditional local dishes to international cuisines like Italian, Chinese, Indian, or American.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="imgBox">
+        <img src="img1.png" class="ibaco">
+      </div>
+    </div>
+    <ul class="thumb">
+      <li><img src="img2.png" onclick="imgSlider('img2.png')"></li>
+      <li><img src="img3.png" onclick="imgSlider('img3.png')"></li>
+      <li><img src="img4.png" onclick="imgSlider('img4.png')"></li>
+    </ul>
+    <ul class="sci">
+      <li><a href="#"><img src="s1.png" height="50px" width="50px"></a></li>
+      <li><a href="#"><img src="s2.png" height="50px" width="50px"></a></li>
+      <li><a href="#"><img src="s3.png" height="50px" width="50px"></a></li>
+    </ul>
+  </section>
+  <section name="menu" id="menu">
+    <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <img class="mySlides" src="img5.png" height="500" width="500">
+    <img class="mySlides" src="img6.png">
+    <img class="mySlides" src="img7.png" height="500" width="600">
+    <img class="mySlides" src="img8.png" height="500" width="500">
+    <img class="mySlides" src="img9.png" height="500" width="500">
+    <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+  </section>
+  <section name="about" id="about">
+    <h1>About Us</h1>
+  <div class="con">
+    <div >
+      <p>A restaurant named Paradise might aim to create a serene and comfortable environment for its guests. This could be achieved through elegant decor, soothing lighting, and a well-designed layout. Some restaurants might even have outdoor seating areas with beautiful landscapes or views.</p>
+    </div>
+    <div>
+      <p>Paradise would likely strive to provide excellent customer service. Friendly and attentive staff members might be dedicated to ensuring a pleasant dining experience for guests. Prompt service, knowledgeable recommendations, and accommodating special requests could be some of the hallmarks of such a restaurant.</p>
+    </div>
+    <div>
+      <p>Paradise might focus on using high-quality ingredients and fresh produce to create delicious and flavorful dishes. Chefs might be skilled in their craft, paying attention to details and presentation to provide a memorable culinary experience.</p>
+    </div>
+  </div>
+  </section>
+  <section name="contact" id="contact">
+    <form class="cf">
+      <div class="half left cf">
+        <input type="text" id="input-name" placeholder="Name">
+        <input type="email" id="input-email" placeholder="Email address">
+        <input type="text" id="input-subject" placeholder="Subject">
+      </div>
+      <div class="half right cf">
+        <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
+      </div>  
+      <input type="submit" value="Submit" id="input-submit">
+    </form>
+  </section>
+  <script type="text/javascript">
+    function imgSlider(anything){
+      document.querySelector('.ibaco').src = anything;
+    }
+
+    function changeCircleColor(color){
+      const circle = document.querySelector('.circle');
+      circle.style.background = color;
+    }
+    document.getElementById("input-submit").addEventListener("click", function(event) {
+      event.preventDefault();
+      alert("Form submitted successfully!");
+    });
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length} ;
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      x[slideIndex-1].style.display = "block";
+    }
+  </script>
+  <footer>
+    We hope you had an exceptional culinary experience. Your satisfaction is our priority, and we strive to provide outstanding service, delectable dishes, and a welcoming atmosphere. 
+  </footer>
+</body>
+</html>
